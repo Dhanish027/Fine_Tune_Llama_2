@@ -25,12 +25,6 @@ We also need to consider the overhead due to optimizer states, gradients, and fo
 Full fine-tuning is not possible here: we need parameter-efficient fine-tuning (PEFT) techniques like LoRA or QLoRA.
 To drastically reduce the VRAM usage, we must fine-tune the model in 4-bit precision, which is why we’ll use QLoRA here.
 
-## Step 3
-
-!.Load a llama-2-7b-chat-hf model (chat model)
-2.Train it on the mlabonne/guanaco-llama2-1k (1,000 samples), which will produce our fine-tuned model Llama-2-7b-chat-finetune
-3.QLoRA will use a rank of 64 with a scaling parameter of 16. We’ll load the Llama 2 model directly in 4-bit precision using the NF4 type and train it for one epoch
-
 ## Output:
 
 Guanaco is a high-quality dataset that has been used to fine-tune state-of-the-art LLMs in the past. The entire Guanaco dataset is available on Hugging Face and it has the potential to achieve even greater performance on a variety of natural language tasks.
